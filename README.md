@@ -29,12 +29,5 @@ Este programa procesa un archivo de texto (`entrada.txt`) y escribe un archivo d
     - Se utiliza un *multiconjunto* (`multiconjunto`) para almacenar palabras con su multiplicidad, implementado como un árbol binario de búsqueda auto-balanceado.
     - Una *cola priorizada* (`colaprio`) organiza palabras según su prioridad, utilizando dos colas: una para palabras con alta prioridad y otra para palabras con baja prioridad.
 
-2. **Manejo de Archivos**:
-    - Los archivos `entrada.txt` y `salida.txt` se manejan utilizando flujos de entrada y salida (`ifstream` y `ofstream`).
-
-3. **Iteradores**:
+2. **Iteradores**:
     - Se utilizan iteradores para recorrer tanto el `multiconjunto` como la `cola priorizada` de manera ordenada.
-
-## Conclusión
-
-El programa utiliza estructuras de datos y algoritmos eficientes para organizar las palabras de `entrada.txt` y escribir `salida.txt` de acuerdo con las especificaciones. El uso de *multiconjunto* y *cola priorizada* permite manejar palabras de manera efectiva y ordenada.
