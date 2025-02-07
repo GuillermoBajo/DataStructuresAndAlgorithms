@@ -1,33 +1,37 @@
 # Data Structures And Algorithms
 
-Este programa procesa un archivo de texto (`entrada.txt`) y escribe un archivo de salida (`salida.txt`) con palabras ordenadas de manera específica.
+This program processes a text file (`entrada.txt`) and writes an output file (`salida.txt`) with words sorted in a specific way.
 
-## Aspectos Algorítmicos
+## Algorithmic Aspects
 
-1. **Lectura del Archivo de Entrada**:
-    - La función `cargarDatos` lee palabras de `entrada.txt` y las almacena en un *multiconjunto* (`multiconjunto`) que mantiene la multiplicidad (repeticiones) de cada palabra.
+1. **Reading the Input File**:
 
-2. **Organización de Palabras**:
-    - Se utilizan dos estructuras de datos para organizar las palabras:
-        - Un *multiconjunto* (`multiconjunto`) para almacenar palabras y su multiplicidad.
-        - Una *cola priorizada* (`colaprio`) para organizar palabras según su prioridad:
-            - Palabras con multiplicidad igual a 1 (no repetidas) se consideran de alta prioridad.
-            - Palabras con multiplicidad superior a 1 (repetidas) se consideran de baja prioridad.
+   - The function `loadData` reads words from `entrada.txt` and stores them in a _multiset_ (`multiset`) that maintains the multiplicity (repetition count) of each word.
 
-3. **Generación de la Cola Priorizada**:
-    - La función `llenaColaPrio` itera a través del `multiconjunto` y llena la `cola` con elementos de tipo `elm` (estructura que almacena una palabra y su multiplicidad).
-    - Los elementos se encolan según su prioridad, utilizando la función `encolarCP`.
+2. **Word Organization**:
 
-4. **Escritura del Archivo de Salida**:
-    - La función `salidaDatos` escribe las palabras de la `cola` en `salida.txt` siguiendo las especificaciones:
-        - Palabras con alta prioridad (no repetidas) se escriben primero, ordenadas alfabéticamente.
-        - Luego, se escriben palabras con baja prioridad (repetidas) junto con su multiplicidad, ordenadas alfabéticamente.
+   - Two data structures are used to organize the words:
+     - A _multiset_ (`multiset`) to store words and their multiplicity.
+     - A _priority queue_ (`priorityQueue`) to organize words based on their priority:
+       - Words with a multiplicity of 1 (non-repeated) are considered high priority.
+       - Words with a multiplicity greater than 1 (repeated) are considered low priority.
 
-## Aspectos Estructurales
+3. **Generating the Priority Queue**:
 
-1. **Estructura de Datos**:
-    - Se utiliza un *multiconjunto* (`multiconjunto`) para almacenar palabras con su multiplicidad, implementado como un árbol binario de búsqueda auto-balanceado.
-    - Una *cola priorizada* (`colaprio`) organiza palabras según su prioridad, utilizando dos colas: una para palabras con alta prioridad y otra para palabras con baja prioridad.
+   - The function `fillPriorityQueue` iterates through the `multiset` and fills the `queue` with elements of type `elm` (a structure that stores a word and its multiplicity).
+   - Elements are enqueued based on their priority using the function `enqueuePQ`.
 
-2. **Iteradores**:
-    - Se utilizan iteradores para recorrer tanto el `multiconjunto` como la `cola priorizada` de manera ordenada.
+4. **Writing the Output File**:
+   - The function `outputData` writes the words from the `queue` to `salida.txt` following these specifications:
+     - High-priority words (non-repeated) are written first, sorted alphabetically.
+     - Low-priority words (repeated) are written afterward, along with their multiplicity, sorted alphabetically.
+
+## Structural Aspects
+
+1. **Data Structures**:
+
+   - A _multiset_ (`multiset`) is used to store words and their multiplicity, implemented as a self-balancing binary search tree.
+   - A _priority queue_ (`priorityQueue`) organizes words by priority, using two queues: one for high-priority words and another for low-priority words.
+
+2. **Iterators**:
+   - Iterators are used to traverse both the `multiset` and the `priority queue` in an ordered manner.
